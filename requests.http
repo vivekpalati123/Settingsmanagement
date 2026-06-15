@@ -1,0 +1,46 @@
+### Task Manager API (MongoDB) — sample requests
+### Open in VS Code with the "REST Client" extension and click "Send Request".
+
+@host = http://localhost:8082
+
+### Home / info
+GET {{host}}/
+
+### Health
+GET {{host}}/health
+
+### Get all tasks
+GET {{host}}/api/tasks
+
+### Get only completed tasks
+GET {{host}}/api/tasks?completed=true
+
+### Create a task
+POST {{host}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Learn Spring Boot with MongoDB",
+  "description": "Connect the app to MongoDB Atlas",
+  "priority": "HIGH"
+}
+
+### Get one task (replace the id with a real one from the list)
+GET {{host}}/api/tasks/REPLACE_WITH_ID
+
+### Update a task
+PUT {{host}}/api/tasks/REPLACE_WITH_ID
+Content-Type: application/json
+
+{
+  "title": "Updated title",
+  "description": "Updated description",
+  "completed": true,
+  "priority": "MEDIUM"
+}
+
+### Toggle completion
+PATCH {{host}}/api/tasks/REPLACE_WITH_ID/toggle
+
+### Delete a task
+DELETE {{host}}/api/tasks/REPLACE_WITH_ID
